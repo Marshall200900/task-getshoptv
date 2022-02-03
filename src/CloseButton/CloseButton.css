@@ -2,7 +2,7 @@
     margin-left: 400px;
     cursor: pointer;
     pointer-events: all;
-    /* position: absolute; */
+    position: absolute;
     top: 20px;
     right: 20px;
     width: 88px;

@@ -1,0 +1,39 @@
+.slider {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rosybrown;
+}
+.slider .images {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.slider .images .image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: all 1s ease;
+    opacity: 0;
+}
+.slider .images .image.visible {
+    transition: all 1s ease;
+    opacity: 1;
+}
+.slider .buttons {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    display: flex;
+}
+.slider .buttons .button:focus {
+    outline: none !important;
+}
+

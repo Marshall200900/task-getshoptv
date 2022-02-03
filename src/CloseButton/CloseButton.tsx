@@ -6,9 +6,10 @@ import './CloseButton.css';
 interface CloseButtonProps {
     close: () => void;
     onFocus: () => void
+    tabIndex: number,
 }
 
-const CloseButton: React.FC<CloseButtonProps> = ({ close, onFocus }) => {
+const CloseButton: React.FC<CloseButtonProps> = ({ close, onFocus, tabIndex }) => {
 
     const [currentImg, setCurrentImg] = useState(BtnClose);
     const numberPressedEvent = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -18,7 +19,7 @@ const CloseButton: React.FC<CloseButtonProps> = ({ close, onFocus }) => {
     }
     return (
         <div
-            tabIndex={14}
+            tabIndex={tabIndex}
             className="close-btn"
             onClick={close}
             onKeyPress={numberPressedEvent}
