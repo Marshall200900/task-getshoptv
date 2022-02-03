@@ -1,0 +1,118 @@
+.number-popup-container {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    
+    pointer-events: none;
+}
+.additional-info {
+    pointer-events: all;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.additional-info span {
+    width: 194px;
+    color: white;
+    text-align: right;
+}
+
+.number-popup {
+    pointer-events: all;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 380px;
+    height: 100%;
+
+    background: #86D3F4;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.number-popup .primary-text {
+    margin-top: 72px;
+    font-size: 26px;
+    text-align: center;
+}
+.number-popup .number-input-container {
+    margin-top: 13px;
+    font-size: 32px;
+    font-weight: bold;
+}
+.number-popup .secondary-text {
+    margin-top: 13px;
+    text-align: center;
+}
+.number-popup .buttons {
+    margin-top: 33px;
+    width: 284px;
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+.number-popup .buttons div {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    flex: 1 0 88px;
+    box-sizing: border-box;
+
+    font-weight: 500;
+}
+.number-popup .buttons div:focus {
+    background: black;
+    color: white;
+}
+.number-popup .buttons .clear {
+    flex-basis: 186px;
+    box-sizing: border-box;
+}
+.number-popup .agreement {
+    width: 284px;
+    display: flex;
+    align-items: center;
+    margin-top: 33px;
+
+}
+.number-popup .agreement span {
+    font-size: 14px;
+    color: #565656;
+    margin-left: 10px;
+}
+.number-popup .button-submit {
+    margin-top: 13px;
+
+    font-family: 'Roboto', 'sans-serif';
+    font-weight: 500;
+    font-size: 16px;
+
+    background: black;
+    color: white;
+
+    width: 284px;
+    height: 52px;
+
+    text-align: center;
+
+    border: none;
+
+}
+.number-popup .button-submit.grey {
+    background: none;
+    border: 1px solid #4E4E4E;
+    color: #4E4E4E;
+    
+}
