@@ -1,0 +1,10 @@
+.close-btn {
+    margin-left: 400px;
+    cursor: pointer;
+    pointer-events: all;
+    /* position: absolute; */
+    top: 20px;
+    right: 20px;
+    width: 88px;
+    height: 52px;
+}
