@@ -83,9 +83,9 @@ const NumberPopup: React.FC<NumberPopupProps> = ({ closePopup, setCurrentNumber,
             setCurrentNumber(currentNumber.slice(0, currentNumber.length - 1))
         }
     }
-    const numberPressedEvent = (e: React.KeyboardEvent<HTMLDivElement>, value: string) => {
+    const enterPressedEvent = (e: React.KeyboardEvent, fc: () => void) => {
         if (e.key === 'Enter') {
-            setCurrentNumber(value)
+            fc();
         }
     }
     const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -140,7 +140,7 @@ const NumberPopup: React.FC<NumberPopupProps> = ({ closePopup, setCurrentNumber,
                                     tabIndex={i + 1}
                                     key={i}
                                     onFocus={() => setFocus('clear')}
-                                    onKeyPress={(e) => numberPressedEvent(e, '')}
+                                    onKeyPress={(e) => enterPressedEvent(e, () => setCurrentNumber(''))}
                                     onClick={() => setCurrentNumber('')}
                                 >
                                     {el}
@@ -153,7 +153,7 @@ const NumberPopup: React.FC<NumberPopupProps> = ({ closePopup, setCurrentNumber,
                                 tabIndex={i + 1}
                                 key={i}
                                 onFocus={() => setFocus(el)}
-                                onKeyPress={(e) => numberPressedEvent(e, currentNumber + el)}
+                                onKeyPress={(e) => enterPressedEvent(e, () => setCurrentNumber(currentNumber + el))}
                                 onClick={() => setCurrentNumber(currentNumber + el)}
                             >
                                 {el}
@@ -165,7 +165,7 @@ const NumberPopup: React.FC<NumberPopupProps> = ({ closePopup, setCurrentNumber,
                     tabIndex={12}
                     className="agreement"
                     onFocus={() => setFocus('agreement')}
-                    onKeyPress={() => setCheckboxChecked(!checkboxChecked)}
+                    onKeyPress={(e) => enterPressedEvent(e, () => setCheckboxChecked(!checkboxChecked))}
                     onClick={() => setCheckboxChecked(!checkboxChecked)}
                 >
                     <img src={checkboxChecked ? CheckboxChecked: Checkbox} alt="checkbox" />
@@ -174,10 +174,10 @@ const NumberPopup: React.FC<NumberPopupProps> = ({ closePopup, setCurrentNumber,
                 <button
                     tabIndex={13}
                     onFocus={() => setFocus('confirm')}
-                    onKeyPress={() => {
+                    onKeyPress={(e) => enterPressedEvent(e, () => {
                         if (validated())
                             openSlider();
-                    }}
+                    })}
                     className={`button-submit ${!validated() ? 'grey' : ''}`}>
                     ПОДТВЕРДИТЬ НОМЕР
                 </button>
