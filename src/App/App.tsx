@@ -6,6 +6,10 @@ import Slider from '../Slider';
 import YouTubeVideo from '../YouTubeVideo';
 import './App.css';
 import { YouTubePlayer } from 'youtube-player/dist/types';
+import img1 from '../res/slider-images/image 1.png'
+import img2 from '../res/slider-images/image 2.png'
+import img3 from '../res/slider-images/image 3.png'
+
 
 const videoSrc = 'https://www.youtube.com/embed/M7FIvfx5J10';
 
@@ -47,7 +51,7 @@ const App = () => {
                 closePopup={closePopup}
                 openSlider={openSlider}
                 /> : ''}
-            {sliderShown ? <Slider /> : ''}
+            {sliderShown ? <Slider images={[img1, img2, img3]} closeSlider={() => setSliderShown(false)} /> : ''}
         </div>
     )
 }

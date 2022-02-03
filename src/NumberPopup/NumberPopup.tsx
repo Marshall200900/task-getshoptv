@@ -182,9 +182,13 @@ const NumberPopup: React.FC<NumberPopupProps> = ({ closePopup, setCurrentNumber,
                     ПОДТВЕРДИТЬ НОМЕР
                 </button>
             </div>
-            <CloseButton close={() => {
-                closePopup()
-            }} onFocus={() => setFocus('x')} />
+            <CloseButton
+                close={() => {
+                    closePopup()
+                }}
+                onFocus={() => setFocus('x')}
+                tabIndex={14}    
+            />
             <div className="additional-info">
                 <span>СКАНИРУЙТЕ QR-КОД ДЛЯ ПОЛУЧЕНИЯ ДОПОЛНИТЕЛЬНОЙ ИНФОРМАЦИИ</span>
                 <img src={QRImage} alt="qr" />

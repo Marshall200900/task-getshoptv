@@ -14,7 +14,7 @@ const Banner: React.FC<BannerProps> = ({ btnOnClick }) => {
         btnRef.current?.focus();
         setTimeout(() => {
             setHidden(false);
-        }, 1000);
+        }, 5000);
     }, []);
 
     return (
